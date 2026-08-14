@@ -10,7 +10,7 @@ st.set_page_config(page_title="Smart Prescription Reader", page_icon="💊")
 @st.cache_resource
 def load_ner_model():
     # Using your exact chosen model from HuggingFace
-    return pipeline("ner", model="d4data/biomedical-ner-all", tokenizer="d4data/biomedical-ner-all")
+    return pipeline("ner", model="d4data/biomedical-ner-all", tokenizer="d4data/biomedical-ner-all", aggregation_strategy="simple")
 
 # --- Your Custom Functions ---
 def clean_medical_text(text: str) -> str:
