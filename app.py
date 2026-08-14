@@ -28,7 +28,7 @@ def parse_ner_results(extraction_results: list) -> pd.DataFrame:
         for entity in item['entities']:
             structured_rows.append({
                 "Entity Text": entity.get('word').replace('##', ''),
-                "Entity Type": entity.get('entity'),
+                "Entity Type": entity.get('entity_group'),
                 "Confidence Score": round(entity.get('score', 0.0), 4)
             })
     return pd.DataFrame(structured_rows)
